@@ -16,16 +16,16 @@ function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
 	
+	packageSprite=createSprite(width/2, 80, 100, 100);
+	packageSprite.addImage(packageIMG)
+	packageSprite.scale=0.2
+	
 	box1 = createSprite(400,650,200,20, {isStatic:true});
     box1.shapeColor = "red";
     box2 = createSprite(300,620,20,100, {isStatic:true});
 	box2.shapeColor = "red";
 	box3 = createSprite(500,620,20,100, {isStatic:true});
 	box3.shapeColor = "red";
-
-	packageSprite=createSprite(width/2, 80, 100, 100);
-	packageSprite.addImage(packageIMG)
-	packageSprite.scale=0.2
 
 	helicopterSprite=createSprite(width/2, 200, 10,10);
 	helicopterSprite.addImage(helicopterIMG)
@@ -68,7 +68,7 @@ function keyPressed() {
  if (keyCode === DOWN_ARROW) {
     // Look at the hints in the document and understand how to make the package body fall only on press of the Down arrow key.
 	Matter.Body.setStatic(packageBody, false);
-    packageBody.collide(box2);
+    
  }
 
 }
